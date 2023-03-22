@@ -1,5 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import TestButton from '../components/test';
 import { IonSearchbar } from '@ionic/react';
+
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -17,6 +19,7 @@ const Tab1: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonSearchbar />
+        <TestButton />
       </IonContent>
     </IonPage>
   );
