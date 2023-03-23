@@ -1,6 +1,4 @@
-import React from 'react';
 import axios from 'axios';
-import { IonButton } from '@ionic/react';
 
 let prefix = 'api'
 
@@ -47,17 +45,4 @@ const postRequest = async (endpoint, data) => {
   }
 }
 
-class TestButton extends React.Component {
-    testConsoleLog = () => {
-        console.log('foo foo foo');
-    }
-
-    testServerPing = () => {
-        getRequest('/test');
-    }
-    render() {
-        return <IonButton onClick={this.testServerPing}>Test</IonButton>
-    }
-}
-
-export default TestButton
+export {getRequest, postRequest}

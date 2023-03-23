@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { search, person } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
+import Search from './pages/Search';
 import Tab2 from './pages/Tab2';
 
 /* Core CSS required for Ionic components to work properly */
@@ -40,18 +40,15 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/">
+            <Search />
           </Route>
           <Route exact path="/tab2">
             <Tab2 />
           </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
-          </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="Search" href="/tab1">
+          <IonTabButton tab="Search" href="/">
             <IonIcon aria-hidden="true" icon={search} />
             <IonLabel>Search</IonLabel>
           </IonTabButton>
