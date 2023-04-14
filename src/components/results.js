@@ -1,13 +1,16 @@
 import React from 'react';
-import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
 
 class Result extends React.Component {
     render() {
         return  <IonCard>
                     <IonCardHeader>
-                    <IonCardTitle>{this.props.name}</IonCardTitle>
-                    <IonCardSubtitle>{this.props.type}</IonCardSubtitle>
+                        <IonCardTitle>{this.props.name}</IonCardTitle>
+                        <IonCardSubtitle>{this.props.type}</IonCardSubtitle>
                     </IonCardHeader>
+                    <IonCardContent>
+                        {this.props.rating}
+                    </IonCardContent>
                 </IonCard>
     }
 }
@@ -28,6 +31,7 @@ class Results extends React.Component {
                                 <Result
                                 name={result.name}
                                 type={result.type}
+                                rating={result.rating}
                                 />
                             </ion-col>
                         )}

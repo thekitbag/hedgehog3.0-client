@@ -1,5 +1,5 @@
 import React from "react";
-import { IonSearchbar, IonInput } from '@ionic/react';
+import { IonInput } from '@ionic/react';
 import { IonButton } from '@ionic/react';
 import { getRequest, postRequest } from '../utils/api';
 
@@ -33,7 +33,8 @@ class SearchForm extends React.Component {
     }
 
 
-    search = async () => {
+    search = async (event) => {
+        event.preventDefault();
         let r =  await getRequest('/search', );
         const results = r.data.places
         this.props.updateResults(results)
@@ -44,7 +45,7 @@ class SearchForm extends React.Component {
                     <ion-grid>
                         <ion-row>
                             <ion-col size="12">
-                            <ion-input type="text"  onInput={this.handleChange} color="medium" placeholder="Search for a place" />
+                            <IonInput type="text"  onIonInput={this.handleChange} color="medium" placeholder="Search for a place" />
                             </ion-col>
                         </ion-row>
                         <ion-row>
