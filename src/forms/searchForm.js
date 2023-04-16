@@ -1,5 +1,5 @@
 import React from "react";
-import { IonInput } from '@ionic/react';
+import { IonCol, IonGrid, IonInput, IonRow } from '@ionic/react';
 import { IonButton } from '@ionic/react';
 import { getRequest, postRequest } from '../utils/api';
 
@@ -42,21 +42,21 @@ class SearchForm extends React.Component {
 
     render() {
         return  <form onSubmit={this.handleSubmit}>
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col size="12">
+                    <IonGrid>
+                        <IonRow>
+                            <IonCol size="12">
                             <IonInput type="text"  onIonInput={this.handleChange} color="medium" placeholder="Search for a place" />
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col size="12" class="ion-text-center">
+                            </IonCol>
+                        </IonRow>
+                        <IonRow>
+                            <IonCol size="12" class="ion-text-center">
                                 <SearchButton 
                                     value="Submit"
                                     search={this.handleSubmit}
                                 />
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
                 </form>
     }
 }

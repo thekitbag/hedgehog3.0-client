@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -12,7 +12,8 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { search, person } from 'ionicons/icons';
 import Search from './pages/Search';
-import Tab2 from './pages/Tab2';
+import Profile from './pages/Profile';
+import Place from './pages/Place';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,16 +44,22 @@ const App = () => (
           <Route exact path="/">
             <Search />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/profile">
+            <Profile />
           </Route>
+          <Route
+            path="/place/:placeId"
+            render={(props) => {
+              return <Place {...props} />;
+            }}
+          />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="Search" href="/">
             <IonIcon aria-hidden="true" icon={search} />
             <IonLabel>Search</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="Profile" href="/profile">
             <IonIcon aria-hidden="true" icon={person} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>

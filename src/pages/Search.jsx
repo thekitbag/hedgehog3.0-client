@@ -1,8 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import Results from '../components/results';
 import React from 'react'
-
-import './Tab1.css';
 import SearchForm from '../forms/searchForm';
 
 class Search extends React.Component {
@@ -15,11 +13,6 @@ class Search extends React.Component {
   render () {
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Hedgehog</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <IonContent fullscreen>
           <IonHeader collapse="condense">
             <IonToolbar>

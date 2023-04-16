@@ -1,15 +1,15 @@
 import React from 'react';
-import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonBadge } from '@ionic/react';
 
 class Result extends React.Component {
     render() {
-        return  <IonCard>
+        return  <IonCard routerLink={'/place/' + this.props.placeId} style={{"height": "100%"}}>
                     <IonCardHeader>
-                        <IonCardTitle>{this.props.name}</IonCardTitle>
-                        <IonCardSubtitle>{this.props.type}</IonCardSubtitle>
+                        <IonCardTitle style={{"font-size": "20px"}}>{this.props.name}</IonCardTitle>
+                        <IonCardSubtitle>{this.props.type} in {this.props.location}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>
-                        {this.props.rating}
+                        <IonBadge color="secondary">{this.props.rating}</IonBadge>
                     </IonCardContent>
                 </IonCard>
     }
@@ -32,6 +32,8 @@ class Results extends React.Component {
                                 name={result.name}
                                 type={result.type}
                                 rating={result.rating}
+                                location={result.location}
+                                placeId={result.place_id}
                                 />
                             </ion-col>
                         )}
